@@ -41,3 +41,8 @@ footer .contactsAndOS{
   width: 55%;
   text-align: right;
 }
+
+footer .contactsAndOS h5 a{
+  text-decoration: none;
+  color: black;
+}
