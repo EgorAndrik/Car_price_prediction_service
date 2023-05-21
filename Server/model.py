@@ -1,22 +1,16 @@
 import numpy as np
 import pandas as pd
 import pickle
-from sklearn.preprocessing import LabelEncoder
 from catboost import CatBoostRegressor
 
 
 class CarRegressor:
     def __init__(self):
-        self.modelRegressor = pickle.load(open('models/bestModelTwo.bf', 'rb'))
+        self.modelRegressor = pickle.load(open('models/bestModelFourth.bf', 'rb'))
 
     def _convertData(self, data: dict) -> np.ndarray:
-        dt = pd.read_csv('DataFrames/TrainTestDATA.csv').iloc[:1, 2:]
+        dt = pd.read_csv('DataFrames/TrainTestDATA_Second.csv').iloc[:1, 2:]
 
-        dtLabelModel = pd.read_csv('DataFrames/TrainTestDATA.csv').iloc[:, 2:]['model']
-        le = LabelEncoder()
-        label = list(le.fit_transform(dtLabelModel))
-        label_res = [i[0] for i in zip(label, dtLabelModel) if data['model'] in i][0]
-        dt['model'] = label_res
         dt = pd.get_dummies(dt, columns=['vehicleType'])
         dt = pd.get_dummies(dt, columns=['gearbox'])
         dt = pd.get_dummies(dt, columns=['fuelType'])
@@ -54,4 +48,4 @@ class CarRegressor:
     def pred(self, X: dict):
         dataPred = self._convertData(X)
         prediction = self.modelRegressor.predict(dataPred)
-        return prediction[0]
+        return round(prediction[0] * 2.5, 3)
