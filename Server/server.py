@@ -12,8 +12,7 @@ def resultPrediction():
     if request.method == 'POST':
         result = request.form
         resultDict = {i: result[i] for i in result}
-        CR = CarRegressor()
-        predict = CR.pred(resultDict)
+        predict = CarRegressor().pred(resultDict)
         return render_template("resultPrediction.html", result=predict)
 
 
@@ -34,6 +33,16 @@ def logInAdmin():
             return render_template("AdminIndex.html", result='ok') if login['password'] == logins['AdminData']\
                 else 'ERROR access denied'
         return 'ERROR access denied'
+
+
+@application.route('/PredictonPriceAdmin')
+def predictonPriceAdmin():
+    return render_template('PredictionAdmin.html')
+
+
+@application.route('/AddCarFormAdmin')
+def addCarFormAdmin():
+    return render_template('AdminIndex.html')
 
 
 if __name__ == '__main__':
