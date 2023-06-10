@@ -48,6 +48,26 @@
                 background-color: #a4a4a4;
             }
 
+            .PredictionPrice{
+                height: 7vb;
+                width: 10vb;
+                float: right;
+                background-color: #a4a4a4;
+                text-align: center;
+                text-decoration: none;
+                color: black;
+                margin: 1%;
+            }
+
+            .PredictionPrice:hover{
+                background-color: #828282;
+                text-decoration: underline;
+            }
+
+            .PredictionPrice::before{
+                background-color: #a4a4a4;
+            }
+
             footer .nameOrganisation {
                 padding: 15px 150px;
                 margin: 15px 0;
@@ -84,13 +104,8 @@
 
         </header>
 
-        <a href="http://localhost:5000/PredictonPriceAdmin" style="
-        height: 7vb; width: 10vb; float: right;
-        background-color: #a4a4a4; text-align: center;
-        text-decoration: none; color: black; margin: 1%;">
-
+        <a href="http://localhost:5000/PredictonPriceAdmin" class="PredictionPrice">
             Prediction price
-
         </a>
 
         <form action="http://localhost:5000/AddCarDetails" method="POST">

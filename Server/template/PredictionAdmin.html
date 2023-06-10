@@ -29,6 +29,24 @@
             body {
               min-height: 100%;
             }
+
+            .AddCarPage{
+                height: 4vb;
+                width: 10vb;
+                float: right;
+                background-color: #a4a4a4;
+                text-align: center;
+                text-decoration: none;
+                color: black;
+                margin: 1%;
+            }
+            .AddCarPage:hover{
+                background-color: #828282;
+                text-decoration: underline;
+            }
+            .AddCarPage::before{
+                background-color: #a4a4a4;
+            }
   
             form {
               position: fixed;
@@ -84,10 +102,7 @@
 
         </header>
         
-        <a href="http://localhost:5000/AddCarFormAdmin" style="
-            height: 4vb; width: 10vb; float: right;
-            background-color: #a4a4a4; text-align: center;
-            text-decoration: none; color: black; margin: 1%;">
+        <a href="http://localhost:5000/AddCarFormAdmin" class="AddCarPage">
             Add Car
         </a>
         

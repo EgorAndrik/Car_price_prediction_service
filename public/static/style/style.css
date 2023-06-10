@@ -9,6 +9,24 @@ body {
   min-height: 100%;
 }
 
+.LogInButton{
+  height: 4vb;
+  width: 10vb;
+  float: right;
+  background-color: #a4a4a4;
+  text-align: center;
+  text-decoration: none;
+  color: black;
+  margin: 1%;
+}
+.LogInButton:hover{
+  background-color: #828282;
+  text-decoration: underline;
+}
+.LogInButton::before{
+  background-color: #a4a4a4;
+}
+
 form {
   position: fixed;
   top: 15%;
