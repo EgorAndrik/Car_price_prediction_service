@@ -111,72 +111,115 @@
         <form action="http://localhost:5000/AddCarDetails" method="POST">
 
             <h4>Форма разширения датасета для модели</h4>
+            <table style="margin: auto;">
+                <tr>
+                    <td>
+                        <h5>Цена</h5>
+                    </td>
 
-            <h5>
-                Цена <input type="number" name="price">
-            </h5>
+                    <td>
+                        <input type="number" name="price">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Год производства машины</h5>
+                    </td>
 
-            <h5>
-                Год производства машины <input type="number" name="yearOfRegistration" size=10>
-            </h5>
+                    <td>
+                        <input type="number" name="yearOfRegistration" size=10>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>ЛС двигателя</h5>
+                    </td>
 
-            <h5>
-                ЛС двигателя <input type="number" name="powerPS" size=10>
-            </h5>
+                    <td>
+                        <input type="number" name="powerPS" size=10>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Пробег</h5>
+                    </td>
 
-            <h5>
-                Пробег <input type="number" name="kilometer" size=10>
-            </h5>
+                    <td>
+                        <input type="number" name="kilometer" size=10>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Брэнд</h5>
+                    </td>
 
-            <h5>
-                Брэнд <input type="text" name="brand">
-            </h5>
+                    <td>
+                        <input type="text" name="brand">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Наличие повреждений</h5>
+                    </td>
 
-            <h5>
-                Наличие повреждений
-                <select name="notRepairedDamage">
-                    <option value="0">нет</option>
-                    <option value="1">есть</option>
-                </select>
-            </h5>
+                    <td>
+                        <select name="notRepairedDamage">
+                            <option value="0">нет</option>
+                            <option value="1">есть</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Тип кузова машины</h5>
+                    </td>
 
-            <h5>
-                Тип кузова машины
-                <select name="vehicleType">
-                    <option value="bus">Минивен</option>
-                    <option value="cabrio">кабриолет</option>
-                    <option value="coupe">купе</option>
-                    <option value="limousine">седан</option>
-                    <option value="small car">небольшая машина</option>
-                    <option value="station wagon">универсал</option>
-                    <option value="suv">внедорожник</option>
-                    <option value="others">другие</option>
-                </select>
-            </h5>
+                    <td>
+                        <select name="vehicleType">
+                            <option value="bus">Минивен</option>
+                            <option value="cabrio">кабриолет</option>
+                            <option value="coupe">купе</option>
+                            <option value="limousine">седан</option>
+                            <option value="small car">небольшая машина</option>
+                            <option value="station wagon">универсал</option>
+                            <option value="suv">внедорожник</option>
+                            <option value="others">другие</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Коробка передач</h5>
+                    </td>
 
-            <h5>
-                Коробка передач
-                <select name="gearbox">
-                    <option value="automatic">Автомат</option>
-                    <option value="manual">Механическая</option>
-                </select>
-            </h5>
+                    <td>
+                        <select name="gearbox">
+                            <option value="automatic">Автомат</option>
+                            <option value="manual">Механическая</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Тип топлева</h5>
+                    </td>
 
-            <h5>
-                Тип топлева
-                <select name="fuelType">
-                    <option value="cng">природный газ</option>
-                    <option value="diesel">дизель</option>
-                    <option value="electro">электричество</option>
-                    <option value="hybrid">гибрид</option>
-                    <option value="lpg">сжиженный газ</option>
-                    <option value="petrol">бензин</option>
-                </select>
-            </h5>
+                    <td>
+                        <select name="fuelType">
+                            <option value="cng">природный газ</option>
+                            <option value="diesel">дизель</option>
+                            <option value="electro">электричество</option>
+                            <option value="hybrid">гибрид</option>
+                            <option value="lpg">сжиженный газ</option>
+                            <option value="petrol">бензин</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
 
-            <input type="reset" name="clear" value="Clear">
+            <input type="reset" name="clear" value="Clear" style="margin: 5%;">
 
-            <input type="submit" name="sendData" value="Submit">
+            <input type="submit" name="sendData" value="Submit" style="margin: 5%;">
 
         </form>
 

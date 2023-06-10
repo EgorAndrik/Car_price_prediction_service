@@ -109,107 +109,142 @@
         <form action="http://localhost:5000/resultPrediction" method="POST">
             <h4>Форма для получения предсказания цены авто</h4>
 
-            <h5>
-                Год производства машины <input type="number" name="yearOfRegistration" size=10>
-            </h5>
+            <table style="margin: auto;">
+                <tr>
+                    <td>
+                        <h5>Год производства машины</h5>
+                    </td>
 
-            <h5>
-                ЛС двигателя <input type="number" name="powerPS" size=10>
-            </h5>
+                    <td>
+                        <input type="number" name="yearOfRegistration" size=10>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>ЛС двигателя</h5>
+                    </td>
 
-            <h5>
-                Пробег <input type="number" name="kilometer" size=10>
-            </h5>
+                    <td>
+                        <input type="number" name="powerPS" size=10>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Пробег</h5>
+                    </td>
 
-            <h5>Брэнд
-                <select name="brand">
-                    <option value="0">alfa romeo</option>
-                    <option value="1">audi</option>
-                    <option value="2">bmw</option>
-                    <option value="3">chevrolet</option>
-                    <option value="4">chrysler</option>
-                    <option value="5">citroen</option>
-                    <option value="6">dacia</option>
-                    <option value="7">daewoo</option>
-                    <option value="8">daihatsu</option>
-                    <option value="9">fiat</option>
-                    <option value="10">ford</option>
-                    <option value="11">honda</option>
-                    <option value="12">hyundai</option>
-                    <option value="13">jaguar</option>
-                    <option value="14">jeep</option>
-                    <option value="15">kia</option>
-                    <option value="16">lada</option>
-                    <option value="17">lancia</option>
-                    <option value="18">land rover</option>
-                    <option value="19">mazda</option>
-                    <option value="20">mercedes_benz</option>
-                    <option value="21">mini</option>
-                    <option value="22">mitsubishi</option>
-                    <option value="23">nissan</option>
-                    <option value="24">opel</option>
-                    <option value="25">peugeot</option>
-                    <option value="26">porsche</option>
-                    <option value="27">renault</option>
-                    <option value="28">rover</option>
-                    <option value="29">saad</option>
-                    <option value="30">seat</option>
-                    <option value="31">skoda</option>
-                    <option value="32">smart</option>
-                    <option value="33">subaru</option>
-                    <option value="34">suzuki</option>
-                    <option value="35">toyota</option>
-                    <option value="36">trabant</option>
-                    <option value="37">volkswagen</option>
-                    <option value="38">volvo</option>
-                </select>
-            </h5>
+                    <td>
+                        <input type="number" name="kilometer" size=10>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Брэнд</h5>
+                    </td>
 
-            <h5>
-                Наличие повреждений
-                <select name="notRepairedDamage">
-                    <option value="0">нет</option>
-                    <option value="1">есть</option>
-                </select>
-            </h5>
-            
-            <h5>
-                Тип кузова машины
-                <select name="vehicleType">
-                    <option value="vehicleType_bus">Минивен</option>
-                    <option value="vehicleType_cabrio">кабриолет</option>
-                    <option value="vehicleType_coupe">купе</option>
-                    <option value="vehicleType_limousine">седан</option>
-                    <option value="vehicleType_small car">небольшая машина</option>
-                    <option value="vehicleType_station wagon">универсал</option>
-                    <option value="vehicleType_suv">внедорожник</option>
-                    <option value="vehicleType_others">другие</option>
-                </select>
-            </h5>
+                    <td>
+                        <select name="brand">
+                            <option value="0">alfa romeo</option>
+                            <option value="1">audi</option>
+                            <option value="2">bmw</option>
+                            <option value="3">chevrolet</option>
+                            <option value="4">chrysler</option>
+                            <option value="5">citroen</option>
+                            <option value="6">dacia</option>
+                            <option value="7">daewoo</option>
+                            <option value="8">daihatsu</option>
+                            <option value="9">fiat</option>
+                            <option value="10">ford</option>
+                            <option value="11">honda</option>
+                            <option value="12">hyundai</option>
+                            <option value="13">jaguar</option>
+                            <option value="14">jeep</option>
+                            <option value="15">kia</option>
+                            <option value="16">lada</option>
+                            <option value="17">lancia</option>
+                            <option value="18">land rover</option>
+                            <option value="19">mazda</option>
+                            <option value="20">mercedes_benz</option>
+                            <option value="21">mini</option>
+                            <option value="22">mitsubishi</option>
+                            <option value="23">nissan</option>
+                            <option value="24">opel</option>
+                            <option value="25">peugeot</option>
+                            <option value="26">porsche</option>
+                            <option value="27">renault</option>
+                            <option value="28">rover</option>
+                            <option value="29">saad</option>
+                            <option value="30">seat</option>
+                            <option value="31">skoda</option>
+                            <option value="32">smart</option>
+                            <option value="33">subaru</option>
+                            <option value="34">suzuki</option>
+                            <option value="35">toyota</option>
+                            <option value="36">trabant</option>
+                            <option value="37">volkswagen</option>
+                            <option value="38">volvo</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Наличие повреждений</h5>
+                    </td>
+                    <td>
+                        <select name="notRepairedDamage">
+                            <option value="0">нет</option>
+                            <option value="1">есть</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Тип кузова машины</h5>
+                    </td>
+                    <td>
+                        <select name="vehicleType">
+                            <option value="vehicleType_bus">Минивен</option>
+                            <option value="vehicleType_cabrio">кабриолет</option>
+                            <option value="vehicleType_coupe">купе</option>
+                            <option value="vehicleType_limousine">седан</option>
+                            <option value="vehicleType_small car">небольшая машина</option>
+                            <option value="vehicleType_station wagon">универсал</option>
+                            <option value="vehicleType_suv">внедорожник</option>
+                            <option value="vehicleType_others">другие</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Коробка передач</h5>
+                    </td>
+                    <td>
+                        <select name="gearbox">
+                            <option value="gearbox_automatic">Автомат</option>
+                            <option value="gearbox_manual">Механическая</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h5>Тип топлева</h5>
+                    </td>
+                    <td>
+                        <select name="fuelType">
+                            <option value="fuelType_cng">природный газ</option>
+                            <option value="fuelType_diesel">дизель</option>
+                            <option value="fuelType_electro">электричество</option>
+                            <option value="fuelType_hybrid">гибрид</option>
+                            <option value="fuelType_lpg">сжиженный газ</option>
+                            <option value="fuelType_petrol">бензин</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
 
-            <h5>
-                Коробка передач
-                <select name="gearbox">
-                    <option value="gearbox_automatic">Автомат</option>
-                    <option value="gearbox_manual">Механическая</option>
-                </select>
-            </h5>
+            <input type="reset" name="clear" value="Clear" style="margin: 5%;">
 
-            <h5>
-                Тип топлева
-                <select name="fuelType">
-                    <option value="fuelType_cng">природный газ</option>
-                    <option value="fuelType_diesel">дизель</option>
-                    <option value="fuelType_electro">электричество</option>
-                    <option value="fuelType_hybrid">гибрид</option>
-                    <option value="fuelType_lpg">сжиженный газ</option>
-                    <option value="fuelType_petrol">бензин</option>
-                </select>
-            </h5>
-
-            <input type="reset" name="clear" value="Clear">
-
-            <input type="submit" name="sendData" value="Submit">
+            <input type="submit" name="sendData" value="Submit" style="margin: 5%;">
 
         </form>
 
