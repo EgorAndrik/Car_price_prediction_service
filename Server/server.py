@@ -3,6 +3,7 @@ import json
 from model import CarRegressor
 from carDetails import AddDetails
 
+
 application = Flask(__name__, template_folder='template')
 
 
@@ -44,10 +45,12 @@ def registration():
     registrationForm = request.form
     with open('Logins/Logins.json', 'r') as logs:
         logins = json.load(logs)
-    with open('Logins/Logins.json', 'w') as logs:
-        logins[registrationForm['userName']] = registrationForm['password']
-        json.dump(logins, logs, ensure_ascii=False, indent='\t')
-    return render_template('UserIndex.html', userName=registrationForm['userName'])
+    if registrationForm['userName'] not in logins:
+        with open('Logins/Logins.json', 'w') as logs:
+            logins[registrationForm['userName']] = registrationForm['password']
+            json.dump(logins, logs, ensure_ascii=False, indent='\t')
+        return render_template('UserIndex.html', userName=registrationForm['userName'])
+    return "ERROR This user is registered on this service"
 
 
 @application.route('/AdminData/PredictonPriceAdmin')
