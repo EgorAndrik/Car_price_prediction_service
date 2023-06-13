@@ -12,11 +12,6 @@
             integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
             crossorigin="anonymous">
         <title>Barkatni Price</title>
-        <link rel="stylesheet" href="public\static\style\style.css">
-
-    </head>
-
-    <body>
 
         <style>
             header {
@@ -96,10 +91,12 @@
             }
           </style>
 
+    </head>
+
+    <body>
+
         <header>
-
             <h1>$ Barcatni Price $</h1>
-
         </header>
 
         <a href="http://localhost:5000/LoginIndex" class="AddCarPage">
@@ -107,6 +104,7 @@
         </a>
 
         <form action="http://localhost:5000/resultPrediction" method="POST">
+
             <h4>Форма для получения предсказания цены авто</h4>
 
             <table style="margin: auto;">
@@ -190,6 +188,7 @@
                     <td>
                         <h5>Наличие повреждений</h5>
                     </td>
+
                     <td>
                         <select name="notRepairedDamage">
                             <option value="0">нет</option>
@@ -201,6 +200,7 @@
                     <td>
                         <h5>Тип кузова машины</h5>
                     </td>
+
                     <td>
                         <select name="vehicleType">
                             <option value="vehicleType_bus">Минивен</option>
@@ -218,6 +218,7 @@
                     <td>
                         <h5>Коробка передач</h5>
                     </td>
+
                     <td>
                         <select name="gearbox">
                             <option value="gearbox_automatic">Автомат</option>
@@ -229,6 +230,7 @@
                     <td>
                         <h5>Тип топлева</h5>
                     </td>
+
                     <td>
                         <select name="fuelType">
                             <option value="fuelType_cng">природный газ</option>
