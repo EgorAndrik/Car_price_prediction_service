@@ -1,10 +1,10 @@
 header {
-  overflow: auto;
-  background-color: #a4a4a4;
-  padding: 1% 0.5%;
-  text-align: center;
+    overflow: auto;
+    background-color: #a4a4a4;
+    padding: 1% 0.5%;
+    text-align: center;
 }
-
+  
 body {
   min-height: 100%;
 }
@@ -44,14 +44,18 @@ body {
 .RegistrationButton::before{
   background-color: #a4a4a4;
 }
-
+  
 form {
   position: fixed;
-  top: 15%;
-  left: 33%;
+  top: 20%;
+  left: 38%;
   text-align: center;
+  height: 50vb;
+  width: 50vb;
+  background-color: #a4a4a4;
+  border-radius: 10%;
 }
-
+  
 footer{
   display: flex;
   position: absolute;
@@ -62,14 +66,14 @@ footer{
   width: 100%;
   background-color: #a4a4a4;
 }
-
+  
 footer .nameOrganisation {
   padding: 15px 150px;
   margin: 15px 0;
   float: right;
   width: 45%;
 }
-
+  
 footer .contactsAndOS{
   float: left;
   padding: 15px 300px;
@@ -77,17 +81,17 @@ footer .contactsAndOS{
   width: 55%;
   text-align: right;
 }
-
+  
 footer .contactsAndOS h5 a{
   text-decoration: none;
   color: black;
 }
-
+  
 footer .contactsAndOS h5 a:hover{
   text-decoration: underline;
   color: rgb(144, 0, 0);
 }
-
+  
 footer .contactsAndOS h5 a::before{
   color: black;
 }
