@@ -30,4 +30,4 @@ class CarRegressor:
     def pred(self, X: dict) -> float:
         dataPred = self._convertData(X)
         prediction = self._modelRegressor.predict(dataPred)
-        return round(prediction[0] * 2, 3)
+        return round(prediction[0] * 2.5, 2)
