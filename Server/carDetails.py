@@ -17,4 +17,3 @@ class AddDetails:
 
         df.loc[len(df.index)] = insertData
         df.to_csv('DataFrames/TrainTestDATA.csv')
-        return 'Данные введены'
