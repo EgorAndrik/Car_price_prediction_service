@@ -12,84 +12,8 @@
             integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" 
             crossorigin="anonymous">
         <title>Barkatni Price</title>
+        <link rel="stylesheet" href= "{{ url_for('static',filename='styles/predictionPriceAdmin.css') }}">
 
-        <style>
-            header {
-              overflow: auto;
-              background-color: #a4a4a4;
-              padding: 1% 0.5%;
-              text-align: center;
-            }
-
-            body {
-              min-height: 100%;
-            }
-
-            .AddCarPage{
-                height: 4vb;
-                width: 10vb;
-                float: right;
-                background-color: #a4a4a4;
-                text-align: center;
-                text-decoration: none;
-                color: black;
-                margin: 1%;
-            }
-            .AddCarPage:hover{
-                background-color: #828282;
-                text-decoration: underline;
-            }
-            .AddCarPage::before{
-                background-color: #a4a4a4;
-            }
-
-            form {
-              position: fixed;
-              top: 15%;
-              left: 33%;
-              text-align: center;
-            }
-
-            footer{
-              display: flex;
-              position: absolute;
-              flex: 0 0 auto;
-              bottom: 0;
-              left: 0;
-              height: auto;
-              width: 100%;
-              background-color: #a4a4a4;
-            }
-
-            footer .nameOrganisation {
-              padding: 15px 150px;
-              margin: 15px 0;
-              float: right;
-              width: 45%;
-            }
-
-            footer .contactsAndOS{
-              float: left;
-              padding: 15px 300px;
-              margin: 15px 0;
-              width: 55%;
-              text-align: right;
-            }
-
-            footer .contactsAndOS h5 a{
-                text-decoration: none;
-                color: black;
-            }
-
-            footer .contactsAndOS h5 a:hover{
-                text-decoration: underline;
-                color: rgb(144, 0, 0);
-            }
-
-            footer .contactsAndOS h5 a::before{
-                color: black;
-            }
-          </style>
     </head>
 
     <body>

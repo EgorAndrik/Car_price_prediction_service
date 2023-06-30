@@ -3,6 +3,7 @@ import json
 from model import CarRegressor
 from carDetails import AddDetails
 
+
 application = Flask(__name__, template_folder='template')
 
 
@@ -64,7 +65,7 @@ def predictonPriceAdmin():
 
 @application.route('/AdminData/AddCarFormAdmin')
 def addCarFormAdmin():
-    return render_template('AdminIndex.html')
+    return render_template('AdminDirectory/AdminIndex.html')
 
 
 @application.route('/LoginIndex')
