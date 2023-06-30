@@ -41,7 +41,8 @@ def logIn():
                     else 'ERROR access denied'
             else:
                 return render_template('UserIndex.html', userName=login['userName']) \
-                    if login['password'] == logins[login['userName']] else 'ERROR access denied'
+                    if login['password'] == logins[login['userName']] \
+                    else 'ERROR access denied'
         return 'ERROR access denied'
 
 
