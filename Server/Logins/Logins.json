@@ -2,5 +2,43 @@
 	"AdminData": [
 		"552263",
 		"AdminDirectory/AdminIndex.html"
+	],
+	"EgorAndrik": [
+		"0000",
+		[
+			[
+				"1999",
+				"125",
+				"356230",
+				"toyota",
+				"1",
+				"vehicleType_limousine",
+				"gearbox_automatic",
+				"fuelType_petrol",
+				3949.26
+			],
+			[
+				"2017",
+				"101",
+				"82360",
+				"chevrolet",
+				"1",
+				"vehicleType_limousine",
+				"gearbox_automatic",
+				"fuelType_petrol",
+				14224.04
+			],
+			[
+				"2003",
+				"86",
+				"286253",
+				"nissan",
+				"1",
+				"vehicleType_limousine",
+				"gearbox_automatic",
+				"fuelType_petrol",
+				3945.9
+			]
+		]
 	]
 }

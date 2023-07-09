@@ -1,0 +1,56 @@
+header {
+  overflow: auto;
+  background-color: #a4a4a4;
+  padding: 1% 0.5%;
+  text-align: center;
+}
+
+body {
+  min-height: 100%;
+}
+
+.UserPage{
+    height: 5vb;
+    width: 14vb;
+    float: right;
+    background-color: #a4a4a4;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    margin: 1%;
+}
+.UserPage:hover{
+    background-color: #828282;
+    text-decoration: underline;
+}
+.UserPage::before{
+    background-color: #a4a4a4;
+}
+
+table{
+    position: fixed;
+    top: 20%;
+    left: 18%;
+    text-align: center;
+}
+table, td{
+    border: 2px solid black;
+}
+
+.ErrorMes{
+    position: fixed;
+    top: 40%;
+    left: 41.5%;
+    text-align: center;
+}
+
+footer{
+  display: flex;
+  position: absolute;
+  flex: 0 0 auto;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  width: 100%;
+  background-color: #a4a4a4;
+}
