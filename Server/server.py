@@ -53,8 +53,8 @@ def logIn():
         logins = json.load(logs)
         if login['userName'] in logins:
             if login['userName'] == 'AdminData':
-                return render_template(logins['AdminData'][1], result='ok') \
-                    if login['password'] == logins['AdminData'][0] \
+                return addCarFormAdmin() \
+                    if login['password'] == logins['AdminData'] \
                     else 'ERROR access denied'
             else:
                 return render_template(
