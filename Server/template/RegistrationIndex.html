@@ -12,6 +12,7 @@
             integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
             crossorigin="anonymous">
         <title>Barkatni Price</title>
+        <link rel="stylesheet" href= "{{ url_for('static',filename='styles/style.css') }}">
         <link rel="stylesheet" href= "{{ url_for('static',filename='styles/styleLogInRegistration.css') }}">
 
     </head>
@@ -22,8 +23,11 @@
             <h1>$ Barcatni Price $</h1>
         </header>
 
-        <a href="http://localhost:5000/LoginIndex" class="LogInButton">
+        <a href="http://localhost:5000/LoginIndex" class="LogInButtonPage">
             Log In
+        </a>
+        <a href="http://localhost:5000/" class="LogInButtonPage">
+            Home page
         </a>
 
         <form action="http://localhost:5000/Registration" method="POST">

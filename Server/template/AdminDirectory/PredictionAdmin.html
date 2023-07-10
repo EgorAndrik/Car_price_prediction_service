@@ -12,6 +12,7 @@
             integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" 
             crossorigin="anonymous">
         <title>Barkatni Price</title>
+        <link rel="stylesheet" href= "{{ url_for('static',filename='styles/style.css') }}">
         <link rel="stylesheet" href= "{{ url_for('static',filename='styles/predictionPriceAdmin.css') }}">
 
     </head>
@@ -26,6 +27,9 @@
         
         <a href="http://localhost:5000/AdminData/AddCarFormAdmin" class="AddCarPage">
             Add Car
+        </a>
+        <a href="http://localhost:5000/" class="AddCarPage">
+            Exit
         </a>
         
         <form action="http://localhost:5000/resultPrediction" method="POST">

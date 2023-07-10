@@ -1,4 +1,4 @@
-.LogInButtonPage{
+.LogInButton{
   height: 4vb;
   width: 15vb;
   float: right;
@@ -8,14 +8,15 @@
   color: black;
   margin: 1%;
 }
-.LogInButtonPage:hover{
+.LogInButton:hover{
   background-color: #828282;
   text-decoration: underline;
 }
-.LogInButtonPage::before{
+.LogInButton::before{
   background-color: #a4a4a4;
 }
-.RegistrationButtonPage{
+
+.RegistrationButton{
   height: 4vb;
   width: 15vb;
   float: right;
@@ -25,21 +26,17 @@
   color: black;
   margin: 1%;
 }
-.RegistrationButtonPage:hover{
+.RegistrationButton:hover{
   background-color: #828282;
   text-decoration: underline;
 }
-.RegistrationButtonPage::before{
+.RegistrationButton::before{
   background-color: #a4a4a4;
 }
-  
+
 form {
   position: fixed;
-  top: 20%;
-  left: 38%;
+  top: 15%;
+  left: 33%;
   text-align: center;
-  height: 50vb;
-  width: 50vb;
-  background-color: #a4a4a4;
-  border-radius: 10%;
 }
