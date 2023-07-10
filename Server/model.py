@@ -9,10 +9,12 @@ class CarRegressor:
 
     def _convertData(self, data: dict) -> np.ndarray:
         dt = pd.read_csv('DataFrames/TrainTestDATA_Second.csv').iloc[:1, 2:]
-        vechicleType = {i: int(i == data['vehicleType']) for i in
-                        ['vehicleType_bus', 'vehicleType_cabrio', 'vehicleType_coupe',
-                         'vehicleType_limousine', 'vehicleType_others', 'vehicleType_small car',
-                         'vehicleType_station wagon', 'vehicleType_suv']}
+        vechicleType = {
+            i: int(i == data['vehicleType']) for i in
+            ['vehicleType_bus', 'vehicleType_cabrio', 'vehicleType_coupe',
+             'vehicleType_limousine', 'vehicleType_others', 'vehicleType_small car',
+             'vehicleType_station wagon', 'vehicleType_suv']
+        }
         gearbox = {i: int(i == data['gearbox']) for i in ['gearbox_automatic', 'gearbox_manual']}
         fuelType = {i: int(i == data['fuelType']) for i in ['fuelType_cng', 'fuelType_diesel', 'fuelType_electro',
                                                             'fuelType_hybrid', 'fuelType_lpg', 'fuelType_petrol']}
