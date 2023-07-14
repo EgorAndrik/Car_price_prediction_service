@@ -4,8 +4,11 @@ from model import CarRegressor
 from carDetails import AddDetails
 from translatBrandCode import BrandCode
 
+
 application = Flask(__name__, template_folder='template')
 codesBrand = BrandCode()
+model = CarRegressor()
+AD = AddDetails()
 
 
 @application.route('/')
@@ -17,8 +20,7 @@ def HomePage():
 def resultPrediction():
     result = request.form
     resultDict = {i: result[i] for i in result}
-    predict = CarRegressor().pred(resultDict)
-    return render_template("resultPrediction.html", result=predict)
+    return render_template("resultPrediction.html", result=model.pred(resultDict))
 
 
 @application.route('/resultPrediction/<userName>', methods=['POST'])
@@ -26,23 +28,22 @@ def resultPredictionUsers(userName: str):
     result = request.form
 
     resultDict, userPredData = {i: result[i] for i in result}, [result[i] for i in result][:8]
-    predict = CarRegressor().pred(resultDict)
-    userPredData.append(predict)
+    price = model.pred(resultDict)
+    userPredData.append(price)
     userPredData[3] = codesBrand.translationCode(userPredData[3])
     with open('Logins/Logins.json', 'r') as logs:
         logins = json.load(logs)
     with open('Logins/Logins.json', 'w') as logs:
         logins[userName][1].append(userPredData)
         json.dump(logins, logs, ensure_ascii=False, indent='\t')
-    return render_template("resultPrediction.html", result=predict)
+    return render_template("resultPrediction.html", result=price)
 
 
 @application.route('/AddCarDetails', methods=['POST'])
 def addCarDetails():
     if request.method == 'POST':
         result = request.form
-        AD = AddDetails({i: result[i] for i in result})
-        AD.addData()
+        AD.addData({i: result[i] for i in result})
         return render_template("AdminDirectory/AdminIndex.html")
 
 
