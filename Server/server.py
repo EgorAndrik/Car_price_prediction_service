@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-import json
+from json import load, dump
 from model import CarRegressor
 from carDetails import AddDetails
 from translatBrandCode import BrandCode
@@ -26,32 +26,31 @@ def resultPrediction():
 @application.route('/resultPrediction/<userName>', methods=['POST'])
 def resultPredictionUsers(userName: str):
     result = request.form
-
-    resultDict, userPredData = {i: result[i] for i in result}, [result[i] for i in result][:8]
+    resultDict = {i: result[i] for i in result}
+    userPredData = [result[i] for i in result][:8]
     price = model.pred(resultDict)
     userPredData.append(price)
     userPredData[3] = codesBrand.translationCode(userPredData[3])
     with open('Logins/Logins.json', 'r') as logs:
-        logins = json.load(logs)
+        logins = load(logs)
     with open('Logins/Logins.json', 'w') as logs:
         logins[userName][1].append(userPredData)
-        json.dump(logins, logs, ensure_ascii=False, indent='\t')
+        dump(logins, logs, ensure_ascii=False, indent='\t')
     return render_template("resultPrediction.html", result=price)
 
 
 @application.route('/AddCarDetails', methods=['POST'])
 def addCarDetails():
-    if request.method == 'POST':
-        result = request.form
-        AD.addData({i: result[i] for i in result})
-        return render_template("AdminDirectory/AdminIndex.html")
+    result = request.form
+    AD.addData({i: result[i] for i in result})
+    return render_template("AdminDirectory/AdminIndex.html")
 
 
 @application.route('/LogIn', methods=['POST'])
 def logIn():
     login = request.form
     with open('Logins/Logins.json', 'r') as logs:
-        logins = json.load(logs)
+        logins = load(logs)
         if login['userName'] in logins:
             if login['userName'] == 'AdminData':
                 return addCarFormAdmin() \
@@ -71,11 +70,11 @@ def logIn():
 def registration():
     registrationForm = request.form
     with open('Logins/Logins.json', 'r') as logs:
-        logins = json.load(logs)
+        logins = load(logs)
     if registrationForm['userName'] not in logins:
         with open('Logins/Logins.json', 'w') as logs:
             logins[registrationForm['userName']] = [registrationForm['password'], []]
-            json.dump(logins, logs, ensure_ascii=False, indent='\t')
+            dump(logins, logs, ensure_ascii=False, indent='\t')
         return render_template(
             'UserIndex.html',
             userName=registrationForm['userName'],
@@ -98,7 +97,7 @@ def userPage(userName: str):
 @application.route('/HistoriPred/<userName>')
 def historyPredCars(userName: str):
     with open('Logins/Logins.json', 'r') as logs:
-        dataPredUser = json.load(logs)[userName][1]
+        dataPredUser = load(logs)[userName][1]
     return render_template(
         'historyPredCars.html',
         dataPredUser=dataPredUser,
