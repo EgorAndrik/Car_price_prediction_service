@@ -5,7 +5,9 @@ import pickle
 
 class CarRegressor:
     def __init__(self):
-        self._modelRegressor = pickle.load(open('models/bestModelFourth.bf', 'rb'))
+        self._modelRegressor = pickle.load(
+            open('models/bestModelFourth.bf', 'rb')
+        )
 
     def _convertData(self, data: dict) -> np.ndarray:
         dt = pd.read_csv('DataFrames/TrainTestDATA_Second.csv').iloc[:1, 2:]

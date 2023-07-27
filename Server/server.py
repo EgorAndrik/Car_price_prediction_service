@@ -3,12 +3,15 @@ from json import load, dump
 from model import CarRegressor
 from carDetails import AddDetails
 from translatBrandCode import BrandCode
+from convertDataFrame import Сonverter
 
 
 application = Flask(__name__, template_folder='template')
+
 codesBrand = BrandCode()
 model = CarRegressor()
-AD = AddDetails()
+addCar = AddDetails()
+converter = Сonverter('DataFrames/TrainTestDATA.csv')
 
 
 @application.route('/')
@@ -42,7 +45,7 @@ def resultPredictionUsers(userName: str):
 @application.route('/AddCarDetails', methods=['POST'])
 def addCarDetails():
     result = request.form
-    AD.addData({i: result[i] for i in result})
+    addCar.addData({i: result[i] for i in result})
     return render_template("AdminDirectory/AdminIndex.html")
 
 
@@ -104,6 +107,12 @@ def historyPredCars(userName: str):
         userName=userName,
         urlUserPage=f"http://localhost:5000/userPage/{userName}"
     )
+
+
+@application.route('/AdminData/convertData')
+def convertData():
+    converter.convert()
+    return "data convert"
 
 
 @application.route('/AdminData/PredictonPriceAdmin')
