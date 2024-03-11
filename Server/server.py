@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from json import load, dump
+
 from model import CarRegressor
 from carDetails import AddDetails
 from translatBrandCode import BrandCode
@@ -53,12 +54,12 @@ def addCarDetails():
 @application.route('/LogIn', methods=['POST'])
 def logIn():
     login = request.form
-    with open('Logins/Logins.json', 'r') as logs:
-        logins = load(logs)
-    if login['userName'] in logins:
+    try:
+        with open('Logins/Logins.json', 'r') as logs:
+            logIn_user = load(logs)[login['userName']]
         if login['userName'] == 'AdminData':
             return addCarFormAdmin() \
-                if login['password'] == logins['AdminData'] \
+                if login['password'] == logIn_user \
                 else 'ERROR access denied'
         else:
             return render_template(
@@ -66,8 +67,9 @@ def logIn():
                 userName=login['userName'],
                 urlHistoryPred=f"/HistoriPred/{login['userName']}",
                 urlPred=f"/resultPrediction/{login['userName']}"
-            ) if login['password'] == logins[login['userName']][0] else 'ERROR access denied'
-    return 'ERROR access denied'
+            ) if login['password'] == logIn_user[0] else 'ERROR access denied'
+    except KeyError:
+        return 'ERROR This user is not registered'
 
 
 @application.route('/Registration', methods=['POST'])
